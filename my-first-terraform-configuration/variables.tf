@@ -1,7 +1,7 @@
 variable "region" {
-  default = "sa-east-1"
+  default = "us-east-1"
 }
 
 variable "ami_id" {
-  default = "ami-e609d0fb"
+  default = "ami-b374d5a5"
 }
