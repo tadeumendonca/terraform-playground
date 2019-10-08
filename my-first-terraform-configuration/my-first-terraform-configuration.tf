@@ -11,3 +11,8 @@ resource "aws_eip" "ip" {
     vpc = true
     instance = aws_instance.example.id
 }
+
+resource "aws_instance" "another" {
+  ami           = "ami-b374d5a5"
+  instance_type = "t2.micro"
+}
