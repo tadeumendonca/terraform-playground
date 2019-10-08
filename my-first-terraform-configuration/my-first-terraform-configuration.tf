@@ -1,10 +1,10 @@
 provider "aws" {
   profile    = "default"
-  region     = "us-east-1"
+  region     = var.region
 }
 
 resource "aws_instance" "example" {
-  ami           = "ami-b374d5a5"
+  ami           = var.ami_id
   instance_type = "t2.micro"
   key_name = "AWS-QuickStart"
   provisioner "local-exec" {
@@ -13,7 +13,7 @@ resource "aws_instance" "example" {
 }
 
 resource "aws_instance" "another" {
-  ami           = "ami-b374d5a5"
+  ami           = var.ami_id
   instance_type = "t2.micro"
   key_name = "AWS-QuickStart"
 }
