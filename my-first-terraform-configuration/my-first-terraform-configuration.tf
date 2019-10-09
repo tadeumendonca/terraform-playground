@@ -4,7 +4,7 @@ provider "aws" {
 }
 
 resource "aws_instance" "example" {
-  ami           = var.ami_id
+  ami           = var.amis[var.region]
   instance_type = "t2.micro"
   key_name = "AWS-QuickStart"
   provisioner "local-exec" {
@@ -13,7 +13,7 @@ resource "aws_instance" "example" {
 }
 
 resource "aws_instance" "another" {
-  ami           = var.ami_id
+  ami           = var.amis[var.region]
   instance_type = "t2.micro"
   key_name = "AWS-QuickStart"
 }
