@@ -12,6 +12,11 @@ resource "aws_instance" "example" {
   }
 }
 
+resource "aws_eip" "ip" {
+    vpc = true
+    instance = aws_instance.example.id
+}
+
 resource "aws_instance" "another" {
   ami           = var.amis[var.region]
   instance_type = "t2.micro"
