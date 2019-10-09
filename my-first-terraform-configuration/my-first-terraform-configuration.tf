@@ -22,3 +22,7 @@ resource "aws_instance" "another" {
   instance_type = "t2.micro"
   key_name = "AWS-QuickStart"
 }
+
+output "ip" {
+  value = aws_eip.ip.public_ip
+}
